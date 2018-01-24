@@ -1,0 +1,10 @@
+<h2>Edit Product {{productid}}:</h2>
+<form (ngSubmit)="updateProduct()" #myForm="ngForm">
+    <label>Title:</label><input name="title" type="text" required [(ngModel)]="products[productid].title" #title='ngModel'><br>
+    <label>Price:</label><input name="price" type="text" required [(ngModel)]="products[productid].price" #price='ngModel'><br>
+    <label>Image:</label><input name="image" type="text" [(ngModel)]="products[productid].image" #image='ngModel'><br>
+    <input type="submit" value="UpdateProduct" [disabled]="!myForm.form.valid">
+
+</form>
+<button (click)="deleteProduct(products[productid].id)">Delete</button>
+<!-- {{products[productid] | json}}; -->

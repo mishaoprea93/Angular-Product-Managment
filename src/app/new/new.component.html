@@ -1,0 +1,9 @@
+<h2>Create New Product:</h2>
+<form (ngSubmit)="newProduct()" #myForm="ngForm">
+    <label>Title:</label><input name="title" type="text" required [(ngModel)]="product.title" #title='ngModel'><br>
+    <label>Price:</label><input name="price" type="text" required [(ngModel)]="product.price" #price='ngModel'><br>
+    <label>Image:</label><input name="image" type="text" [(ngModel)]="product.image" #image='ngModel'><br>
+    <input type="submit" value="Add Product" [disabled]="!myForm.form.valid">
+
+</form>
+<!-- {{product | json}}; -->
